@@ -6,7 +6,14 @@ function HomePage() {
   return (
     <Fragment>
       <h1>The Home Page</h1>
-      <Link href="/order/123">Somewhere else</Link>
+      <ul>
+        <li>
+          <Link href="/order/123">Somewhere else</Link>
+        </li>
+        <li>
+          <Link href="/mike">Mike's page</Link>
+        </li>
+      </ul>
     </Fragment>
   );
 }
