@@ -47,6 +47,56 @@ let employee: {
   },
 };
 
+// Type Alias
+type Employee = {
+  readonly id: number;
+  name: string;
+  retire: (date: Date) => void;
+};
+
+// Union Types
+function kgToLbs(weight: number | string): number {
+  // Narrowing
+  if (typeof weight === "number") {
+    return weight * 2.2;
+  } else {
+    return parseInt(weight) * 2.2;
+  }
+}
+
+// Intersection
+type Draggable = {
+  drag: () => void;
+};
+
+type Resizable = {
+  resize: () => void;
+};
+
+type UIWidget = Draggable & Resizable;
+
+let textBox: UIWidget = {
+  drag: () => {},
+  resize: () => {},
+};
+
+// Literal Types
+type Quantity = 50 | 100;
+// let quantity: 50 | 100 = 50
+let quantity: Quantity = 100;
+
+type Metric = "cm" | "inch";
+
+// Null Values
+function greet(name: string | null) {
+  if (name) console.log(name.toUpperCase);
+  else console.log("Hola!");
+}
+
+greet(null);
+
+// Custom
+
 const Mosh = () => {
   return (
     <div>
